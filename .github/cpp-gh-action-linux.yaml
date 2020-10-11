@@ -1,0 +1,31 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+env:
+  NXXM_AUTH: ${{ secrets.NXXM_AUTH }}
+  
+jobs:
+  build:
+    name: Test_docker_off
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: nxxm_CI 
+        uses: nxxm/cpp-gh-action.@feature_use_official_docker
+        with: 
+          target: "-t gcc-7-cxx17"
+          config: "-C Release"
+          extra_args: "--verbose"
+          jobs: "-j4"
+          need_secret: "enable"  
+      - name: Upload the build directory
+        uses: actions/upload-artifact@v2
+        with:
+          name: my_build
+          path: ./build/
+
+
+
