@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 env:
   NXXM_AUTH: ${{ secrets.NXXM_AUTH }}
