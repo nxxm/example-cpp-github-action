@@ -1,7 +1,7 @@
 name: Test_cpp_gh_action
 on:
   schedule:
-    - cron : '15 12 * * *' # Every day at 12h15
+    - cron : '15 19 * * *' # Every day at 19h15
 env:
   NXXM_AUTH: ${{ secrets.NXXM_AUTH }}
   
