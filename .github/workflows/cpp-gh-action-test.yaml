@@ -2,8 +2,7 @@ name: Test_cpp_gh_action
 on:
   schedule:
     - cron : '15 19 * * *' # Every day at 19h15
-env:
-  NXXM_AUTH: ${{ secrets.NXXM_AUTH }}
+
   
 jobs:
   build-linux:
@@ -24,6 +23,8 @@ jobs:
         with:
           name: my_build
           path: ./build/
+    env:
+        NXXM_AUTH: ${{ secrets.NXXM_AUTH }}
           
 
   build-wasm:
@@ -38,3 +39,6 @@ jobs:
         with:
           name: my_build
           path: ./build/
+    env:
+        NXXM_AUTH: ${{ secrets.NXXM_AUTH }}
+
