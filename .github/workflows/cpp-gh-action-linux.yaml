@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: nxxm_CI 
-        uses: nxxm/cpp-gh-action.@feature_use_official_docker
+        uses: nxxm/cpp-gh-action.@master
         with: 
           target: "gcc-7-cxx17"
           config: "Release"
