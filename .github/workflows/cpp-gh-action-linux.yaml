@@ -18,7 +18,7 @@ jobs:
         with: 
           target: "gcc-7-cxx17"
           config: "Release"
-          extra_args: "--verbose"
+          extra_args: "--force-upgrade"
           jobs: "4"
       - name: Upload the build directory
         uses: actions/upload-artifact@v2
